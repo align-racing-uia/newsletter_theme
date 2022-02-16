@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+  body {
+     font-family: 'Quicksand', sans-serif;
+     font-size: 12px;
+     color: #111;
+   }
+   #alignLogo:hover, #linkedinLogo:hover, #instagramLogo:hover, #facebookLogo:hover, #youtubeLogo:hover, #unsub:hover{
+     opacity: 0.7;
+   }
+   #linkedinLogo, #instagramLogo, #facebookLogo, #youtubeLogo{
+     padding: 15px;
+   }
+    #copyrightText{
+     font-size: 12px;
+     color: #EF6926;
+     font-weight: bold;
+     padding-top: 10px;
+     padding-bottom: 3px;
+    }
+    #followText{
+     color: white;
+     font-size: 20px;
+    }
+    .container {
+     background: #ffffff;
+     width: 90%;
+     margin: 0 auto;
+     padding: 30px;
+     border:5px;
+     border-color: #ffffff;
+     border-style: solid;
+    }
+    .content{
+     min-width: 100%;
+     color: #ffffff;
+     padding: 10px;
+     background-color: #333333;
+     border: 6px;
+     border-style: solid;
+     border-color: #EF6926;
+     box-shadow: 8px 8px 5px black;
+     font-size: 15px;
+    }
+    .content img {
+     width: auto;
+     max-width: 65%;
+     height: auto;
+     border: 2px;
+     border-style: solid;
+     border-color: #EF6926;
+    }
+    .unsub {
+     color:white;
+     font-size: 12px;
+    }
+    .header {
+     border-bottom: 1px solid #ddd;
+     padding-bottom: 10px;
+     padding-top: 10px;
+     background: #333333;
+     border:5px;
+     border-color: #EF6926;
+     border-style: solid;
+     border-radius: 30px 0 0 0;
+     box-shadow: 8px 8px 5px;
+    }
+    .footer {
+      background: #333333;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      font-weight: bold;
+      border:5px;
+      border-color: #EF6926;
+      border-style: solid;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 8px 8px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container" style="max-width: 90%; height: auto;" >
+       <table class ="header" style="width: 100%; min-width: 100%; height: auto;">
+        <tr>
+          <td>
+          <a id ="alignLogo" href = "https://www.alignracing.no/" ><img src="https://newsletter.alignracing.no/uploads/AR_Logo_Light_Outline_white.png" alt="Align Racing Logo" width="30%" max-width="30%" min-width="30%" height="auto"></a>
+       </tr>
+          </td>
+            </table>
+      <table class="content" style="max-width: 100%; height: auto;">
+      <tr>
+        <td>
+          {{ template "content" . }}
+        </tr>
+      </td>
+      </table>
+      <table class= "footer" style="width: 100%; max-width: 100%; height: auto;">
+      <tr>
+        <td><h1 id = "followText">Følg oss!</h1>
+          <a id = "linkedinLogo" href="https://no.linkedin.com/company/alignracing"><img src="https://newsletter.alignracing.no/uploads/linkedin.png" alt="LinkedIn" width="30" height="30"></a>
+          <a id = "facebookLogo" href="https://www.facebook.com/Alignracing/"><img src="https://newsletter.alignracing.no/uploads/facebook.png" alt="Facebook" width="30" height="30"></a>
+          <a id = "instagramLogo" href="https://www.instagram.com/alignracing/"><img src="https://newsletter.alignracing.no/uploads/instagram.png" alt="Instagram" width="30" height="30"></a>
+          <a id = "youtubeLogo" href="https://www.youtube.com/c/AlignRacingUiA"><img src="https://newsletter.alignracing.no/uploads/youtube.png" alt="YouTube" width="30" height="30"></a>
+          </tr><tr>
+          <!-- The unsub newsletter part with the name "unsub" is both an id AND a class. The class is used for both the pretext that comes before
+          AND the actual unsub link for styling and size, while the id only contains unsub link for hovering effect (for optimizing code reasons). // -->
+          <td><p><h2 class = "unsub">Vil du ikke lengre motta disse meldingene?</h2><a id= "unsub" class = "unsub" href="{{ UnsubscribeURL }}">Avslutt abonnement</a>
+          </p><br>
+          </td>
+            </tr>
+            <tr>
+              <td><!-- Copyright text, the "{{ Date "2006" }}" part is Listmonks code for updating year automatically // -->
+          <h3 id= "copyrightText">Align Racing © All Rights Reserved {{ Date "2006" }} </h3>
+           </tr>
+             </td>
+                </table>
+       </section>
+       
+       <!-- Template made & commented by Harun Hurtic // -->
+     </body>
+   </html>
+   
